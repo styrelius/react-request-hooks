@@ -1,0 +1,9 @@
+{
+  "name": "react-request-hooks",
+  "version": "0.1.0",
+  "author": "Ellen Styrélius <ellen.styrelius@gmail.com>",
+  "main": "index.ts",
+  "license": "MIT",
+  "private": false,
+  "repository": "https://github.com/styrelius/react-request-hooks"
+}
