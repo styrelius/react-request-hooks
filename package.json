@@ -6,6 +6,9 @@
   "license": "MIT",
   "private": false,
   "repository": "https://github.com/styrelius/react-request-hooks",
+  "scripts": {
+    "lint": "eslint . --ext .ts --ext .tsx"
+  },
   "devDependencies": {
     "@types/react": "^16.9.36",
     "@types/react-dom": "^16.9.8",
