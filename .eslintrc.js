@@ -7,11 +7,21 @@ module.exports = {
     'prettier',
   ],
   plugins: ['react', 'react-hooks', 'prettier'],
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
   env: {
     browser: true,
     node: true,
+    es6: true,
+  },
+  parserOptions: {
+    ecmaVersion: 2017,
   },
   rules: {
+    'no-unused-vars': 'warn',
     'prettier/prettier': 'warn',
     'import/order': [
       'error',
