@@ -2,20 +2,67 @@
 
 ## 🛠 WORK IN PROGRESS 🛠
 
-### React Hooks for fetching and mutating data with axios.
+### React Hooks for fetching and mutating data.
 
-In short the ambition is to create a more simple alternative to libs like React Query. This will provide React hooks to perform queries or mutations with `axios`. The returned value is an object with useful states (`isLoading`, `isSuccessful`, `hasError` and `data`). In those cases where you don't want to make the request right after first render a function to trigger a request is also returned, as the second item in an array, where the state object is the first item.
+In short the ambition is to create a simple lib that provides React hooks for making requests and accessing a bunch of useful states for the request made (`isLoading`, `isSuccessful`, `hasError` and `data`).
 
-### 🗺 Roadmap
+## 🗺 Roadmap
 
-- [ ] query hook to instantly make a GET request to a given url
-- [ ] query hook to make a GET request to a given url when an execution function is called
+- [x] query hook to instantly make a GET request to a given url
+- [x] query hook to make a GET request to a given url when an execution function is called
 - [ ] mutation hook to make a POST/PUT/DELETE request to a given url when an execution function is called
 - [ ] tests
 - [ ] publish to npm
 - [ ] caching data?
 - [ ] pagination?
 - [ ] other fun stuff :)
+
+---
+
+## Examples
+
+#### useQuery:
+
+```javascript
+import { useQuery } from 'react-request-hooks';
+
+function InstantQuery() {
+  const { isLoading, isSuccessful, hasError, data } = useQuery('https://some-cool-url');
+
+  return (
+    <>
+      {isLoading && <SomeCoolLoader>}
+      // and so on
+    </>
+  );
+}
+```
+
+#### useQueryLater:
+
+```javascript
+import { useQueryLater } from 'react-request-hooks';
+
+function QueryLater() {
+  const [{ isLoading, isSuccessful, hasError, data }, executeQuery] = useQueryLater('https://some-cool-url');
+
+  const handleClick = () => {
+    executeQuery();
+  };
+
+  return (
+    <>
+      <button onClick={handleClick}>
+        Fetch data!
+      </button>
+      {isLoading && <SomeCoolLoader>}
+      // and so on
+    </>
+  );
+}
+```
+
+---
 
 ---
 
