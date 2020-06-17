@@ -31,7 +31,7 @@ function InstantQuery() {
 
   return (
     <>
-      {isLoading && <SomeCoolLoader>}
+      {isLoading && <SomeCoolLoader />}
       // and so on
     </>
   );
@@ -43,8 +43,10 @@ function InstantQuery() {
 ```javascript
 import { useQueryLater } from 'react-request-hooks';
 
-function QueryLater() {
-  const [{ isLoading, isSuccessful, hasError, data }, executeQuery] = useQueryLater('https://some-cool-url');
+function QueryWhenISaySo() {
+  const [{ isLoading, isSuccessful, hasError, data }, executeQuery] = useQueryLater(
+    'https://some-cool-url',
+  );
 
   const handleClick = () => {
     executeQuery();
@@ -52,10 +54,8 @@ function QueryLater() {
 
   return (
     <>
-      <button onClick={handleClick}>
-        Fetch data!
-      </button>
-      {isLoading && <SomeCoolLoader>}
+      <button onClick={handleClick}>Fetch data!</button>
+      {isLoading && <SomeCoolLoader />}
       // and so on
     </>
   );
