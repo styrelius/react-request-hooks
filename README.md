@@ -48,13 +48,9 @@ function QueryWhenISaySo() {
     'https://some-cool-url',
   );
 
-  const handleClick = () => {
-    executeQuery();
-  };
-
   return (
     <>
-      <button onClick={handleClick}>Fetch data!</button>
+      <button onClick={executeQuery}>Fetch data!</button>
       {isLoading && <SomeCoolLoader />}
       // and so on
     </>
