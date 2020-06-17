@@ -4,9 +4,11 @@ module.exports = {
     'plugin:import/errors',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
+    'plugin:@typescript-eslint/recommended',
     'prettier',
   ],
   plugins: ['react', 'react-hooks', 'prettier'],
+  parser: '@typescript-eslint/parser',
   settings: {
     react: {
       version: 'detect',
@@ -19,10 +21,11 @@ module.exports = {
   },
   parserOptions: {
     ecmaVersion: 2017,
+    sourceType: 'module',
   },
   rules: {
-    'no-unused-vars': 'warn',
-    'prettier/prettier': 'warn',
+    '@typescript-eslint/no-explicit-any': 'off', // there are cases where "any" is needed
+    'no-unused-vars': 'off', // this is covered by both ts and plugin @typescript-eslint
     'import/order': [
       'error',
       {
@@ -34,5 +37,6 @@ module.exports = {
         'newlines-between': 'always',
       },
     ],
+    'prettier/prettier': 'warn',
   },
 };
