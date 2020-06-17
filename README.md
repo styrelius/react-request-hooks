@@ -4,7 +4,7 @@
 
 ### React Hooks for fetching and mutating data.
 
-In short the ambition is to create a simple lib that provides React hooks for making requests and accessing a bunch of useful states for the request made (`isLoading`, `isSuccessful`, `hasError` and `data`).
+A simple library that provides React hooks for making requests and accessing a bunch of useful states for the request made.
 
 ## 🗺 Roadmap
 
