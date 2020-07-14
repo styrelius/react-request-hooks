@@ -10,7 +10,7 @@ A simple library that provides React hooks for making requests and accessing a b
 
 - [x] query hook to instantly make a GET request to a given url
 - [x] query hook to make a GET request to a given url when an execution function is called
-- [ ] mutation hook to make a POST/PUT/DELETE request to a given url when an execution function is called
+- [x] mutation hook to make a POST/PUT/DELETE request to a given url when an execution function is called
 - [ ] tests
 - [ ] publish to npm
 - [ ] caching data?
